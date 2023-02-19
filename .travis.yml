@@ -17,6 +17,7 @@ install:
 
 script:
   #- yarn lint
+  - export NODE_OPTIONS=--openssl-legacy-provider
   - npm run build
   - mv build/index.html build/404.html
 deploy:
