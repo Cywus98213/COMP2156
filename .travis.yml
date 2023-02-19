@@ -11,7 +11,12 @@ cache:
   directories:
     - node_modules
 
+before_install:
+  - curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.0/install.sh | bash
+  - source ~/.nvm/nvm.sh
+
 install:
+  - nvm install node
   - npm install
   - npm install -g yarn
   - npm install react-scripts --save
