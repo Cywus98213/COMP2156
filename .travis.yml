@@ -14,13 +14,15 @@ cache:
 before_script:
   - sudo chown -R $USER:$GROUP ~/.npm
   - sudo chown -R $USER:$GROUP ~/.config
+  - chmod +x ./node_modules/react-scripts/bin/react-scripts.js
 
 install:
+  - rm -rf node_modules
   - npm install
   - npm install -g yarn
+  - yarn add react-scripts
 
 script:
-  #- yarn lint
   - yarn build
   - mv build/index.html build/404.html
 
