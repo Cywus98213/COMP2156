@@ -12,13 +12,11 @@ cache:
     - node_modules
 
 install:
-  - nvm install node
   - npm install
   - npm install -g yarn
-  - npm install react-scripts --save
 
 script:
-  - sudo yarn build
+  - npm build
   - mv build/index.html build/404.html
 
 deploy:
